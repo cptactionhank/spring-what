@@ -1,0 +1,7 @@
+CREATE TABLE doc_type (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);
+
+ALTER TABLE customer_file 
+ADD COLUMN doc_type BIGSERIAL NOT NULL REFERENCES doc_type(id);
