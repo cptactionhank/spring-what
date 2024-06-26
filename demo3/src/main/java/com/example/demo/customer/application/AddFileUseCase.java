@@ -19,7 +19,7 @@ public class AddFileUseCase {
         this.docTypeService = docTypeService;
     }
 
-    public CustomerFile execute(CustomerId customerId, String name, DocTypeId docTypeId)
+    public CustomerFile apply(CustomerId customerId, String name, DocTypeId docTypeId)
             throws DocTypeNotFoundException, CustomerNotFoundException {
         var docType = docTypeService.findById(docTypeId).orElseThrow(
                 () -> new DocTypeNotFoundException());
